@@ -1,0 +1,63 @@
+
+.login-container{
+     width: 100%;
+    font-family: var(--lato-font);
+    background-color: var(--primary-transparent);
+    margin: 0;
+ }
+ .login-card{
+    display: flex;
+    flex-direction: column;
+    width: 28rem;
+    border-radius: var(--radius-md);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow-1);
+    height: fit-content;
+    padding: var(--size-sm) var(--size-md) ;
+    margin: 2rem 0;
+ }
+ 
+ .login-card input{
+  height: var(--size-lg);
+  font-size: 1.1rem;
+ }
+ 
+ .pwd-show-icon{
+   cursor: pointer;
+ }
+ 
+ .login-card input:focus{
+     border: 2px solid var(--primary);
+ }
+ 
+ .login-card .btn{
+     padding: var(--size-sm);
+     border: none;
+     justify-content: center;
+     width: 100%;
+     margin: 0.5rem;
+ }
+ 
+ .password-item{
+     position: relative;
+ }
+ .login-pwd-show-icon{
+     position: absolute;
+     top: 2rem;
+     right: 5px; 
+ }
+ .forgot-password{
+     color: var(--primary);
+ }
+ input[type="checkbox"]{
+     width: 1rem;
+     height: 1rem;
+     accent-color: var(--primary);
+ }
+ 
+ @media only screen and (max-width: 800px){
+     .login-card{
+         width: fit-content;
+     }
+ }
+ 
