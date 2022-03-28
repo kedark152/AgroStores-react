@@ -1,0 +1,11 @@
+:root{
+    --transparent-grey: rgba(255, 255, 255, 0.432);
+    --tree-green: #74bb98;
+    --box-shadow-1: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    --box-shadow-2: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    --dark-blue: #00008b;
+    --dark-brown:rgb(116, 30, 30);
+    --box-shadow-right: 15px 0 15px -15px #333;
+    --button-shadow-1:0 0 20px #eee;
+    }
+    
