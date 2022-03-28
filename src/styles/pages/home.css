@@ -1,0 +1,115 @@
+.Home{
+    font-family: var(--acme-font);
+    background-color: var(--primary-transparent);
+}
+
+/* Header */
+.hero-header{
+    width: 100%;
+    height: 80vh;
+    color: var(--secondary);
+    background-image: url(https://res.cloudinary.com/dvuh4fz9d/image/upload/v1648390942/farm-compressed_dqjqsw.webp);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center;
+    position: relative;
+}
+
+.header-content{
+    gap: 1.5rem;
+    text-shadow: 1px 1px var(--white);
+}
+
+/* Btn Gradient Color*/
+.btn-grad {background-image: linear-gradient(to right, var(--secondary) 0%,var(--primary)  51%,var(--secondary)  100%)}
+
+.btn-shop-now{
+    margin: 4rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: var(--white);            
+    box-shadow: var(--button-shadow-1);
+    border-radius: 10px;
+    display: block;
+    white-space: nowrap;
+    border: 2px solid var(--primary);
+    width: 10rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.btn-shop-now:hover{
+    border: 2px solid var(--white);
+    background-position: right center; /* change the direction of the bg-color here */
+   
+}
+.title-underline {
+    background-color: var(--primary);
+    width: 10rem;
+    height: 4px;
+    margin: 0.5rem auto 2rem;
+}
+.categories{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem,25rem));
+    grid-gap: 0.7rem;
+    grid-auto-rows: 14rem;
+    justify-content: center;
+    padding: 1rem
+  
+}
+.category-items{
+    position: relative;
+    opacity: 0.8;
+    border-radius: 10px;
+
+}
+
+.category-items:hover{
+   opacity: 1;
+   cursor: pointer;
+   box-shadow: var(--box-shadow-2); 
+}
+
+.categories img{
+    height: 100%;
+    width:100%;
+    object-fit:cover;
+    border-radius: 10px;
+}
+
+.category-item-text{
+    position:absolute;
+    top: 30%;
+    left:20%;
+    color: var(--primary);
+    background-color: var(--white-gray);
+    padding: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.banner-subtitle{
+    color:var(--dark-blue);
+}
+
+@media screen and (max-width: 900px){
+    .btn-shop-now{
+        margin-top: 0;
+    }
+  .banner-title{
+      font-size: 2rem;
+      letter-spacing: 2px;
+      margin: 0.5rem;
+      line-height: normal;
+
+  }
+  .banner-subtitle{
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      line-height: normal;
+  }
+ 
+}
