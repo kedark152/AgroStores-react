@@ -1,0 +1,58 @@
+.signup-container{
+    width: 100%;
+    font-family: var(--lato-font);
+    background-color: var(--primary-transparent);
+    margin: 0;
+}
+.signup-card{
+   display: flex;
+   flex-direction: column;
+   width: 28rem;
+   border-radius: 10px;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow-1);
+   height: fit-content;
+   padding: 1rem 1.5rem ;
+   margin: 2rem;
+}
+input[type="checkbox"]{
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--primary);
+}
+.signup-card input{
+ height: 1.5rem;
+ font-size: 1.1rem;
+}
+
+.signup-pwd-show-icon{
+  cursor: pointer;
+}
+
+.signup-card input:focus{
+    border: 2px solid var(--primary);
+}
+
+.signup-card .btn{
+    padding: 1rem;
+    border: none;
+    justify-content: center;
+    width: 100%;
+   margin: 0.5rem;
+}
+
+.password-item, .confirm-password-item{
+    position: relative;
+}
+.signup-pwd-show-icon{
+    position: absolute;
+    top: 1.75rem;
+    right: 5px; 
+}
+
+
+@media only screen and (max-width: 800px){
+    .signup-card{
+        width: fit-content;
+    }
+}
