@@ -1,0 +1,14 @@
+footer{
+    background-color: var(--primary);
+    color: var(--white);
+    font-family: var(--acme-font);
+}
+
+.footer-links a{
+    color: var(--white);
+}
+
+.fab:hover{
+  color: var(--grey-dark);
+  cursor: pointer;
+}
