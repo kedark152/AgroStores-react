@@ -1,30 +1,30 @@
 
-export const filterProducts = (state, productList) => {
+export const filterProducts = (filterState, productList) => {
     //Filter-Products-by-Categories
-    if(state.categoryNames.length>0){
+    if(filterState.categoryNames.length>0){
         let prodList =[] ;
-           state.categoryNames.map(name=>
+           filterState.categoryNames.map(name=>
             prodList = prodList.concat(productList.filter((item) => item.categoryName === name)))
         productList = [...prodList];
     }        
     
     //Below for Price Range filter
         productList = productList.filter(
-            (item) => Number(item.price) < Number(state.maxPriceRange)
+            (item) => Number(item.price) < Number(filterState.maxPriceRange)
         );
      //Ratings filter   
         productList = productList.filter(
-            (item) => (item.rating) >= (state.ratings)
+            (item) => (item.rating) >= (filterState.ratings)
         );
     //Sort-By-Price
-        if (state.sortBy === "PRICE-LOW-TO-HIGH") {
+        if (filterState.sortBy === "PRICE-LOW-TO-HIGH") {
         productList = productList.sort((a, b) => a.price - b.price);
         }
-        if (state.sortBy === "PRICE-HIGH-TO-LOW") {
+        if (filterState.sortBy === "PRICE-HIGH-TO-LOW") {
         productList = productList.sort((a, b) => b.price - a.price);
         }
      //Hide-Out-Of-Stock   
-        if (state.removeOutOfStock) {
+        if (filterState.removeOutOfStock) {
         productList = productList.filter((item) => !item.isOutOfStock);
         }       
         

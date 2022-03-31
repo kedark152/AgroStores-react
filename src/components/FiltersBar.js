@@ -3,7 +3,7 @@ import { GetFeaturedCategories } from "../services/getFeaturedCategories";
 
 
 export const FiltersBar = ()=>{
-  const {state,dispatch} = useProduct();
+  const {filterState,dispatchFilters} = useProduct();
   const ratingsInput = [
     {
       title: "4-star",
@@ -38,7 +38,7 @@ export const FiltersBar = ()=>{
      <aside className="filters-sidebar flex-column pd-sm" id="filter-bar">
         <div className="filter-title align-center mg-top-xsm">
           <p className="para-md fw-bold filter-title">Filters</p>
-          <p className="para-sm filter-clear-btn" onClick={() => dispatch({ type: "CLEAR-FILTERS"})}>CLEAR</p>
+          <p className="para-sm filter-clear-btn" onClick={() => dispatchFilters({ type: "CLEAR-FILTERS"})}>CLEAR</p>
         </div>
         <div className="filter-title mg-top-sm">
           <p className="para-md fw-bold">Price in ₹</p>
@@ -54,11 +54,11 @@ export const FiltersBar = ()=>{
           type="range"
           min="300"
           max="3000"
-          value={state.maxPriceRange}
+          value={filterState.maxPriceRange}
           className="price-slider mg-left-xsm"
           id="price-range"
           onChange={(e) =>{
-            dispatch({
+            dispatchFilters({
               type: "PRICE-RANGE-FILTER",
               payload: e.target.value
             });
@@ -74,8 +74,8 @@ export const FiltersBar = ()=>{
          
           {GetFeaturedCategories().map((item) =>
                 <div key={item._id} className="items align-center" >
-                <input type="checkbox" name={item.categoryName} id={item._id} checked={state.categoryNames.includes(item.categoryName)}
-                onChange={(e)=>dispatch({type:"CATEGORIES",payload:e.target.name})} />
+                <input type="checkbox" name={item.categoryName} id={item._id} checked={filterState.categoryNames.includes(item.categoryName)}
+                onChange={(e)=>dispatchFilters({type:"CATEGORIES",payload:e.target.name})} />
                 <label className="mg-xsm fw-bold" htmlFor={item._id}>{item.categoryName}</label>
                 </div>
         
@@ -91,8 +91,8 @@ export const FiltersBar = ()=>{
 
           {ratingsInput.map((item)=>
             <div key={item.id} className="items align-center">
-            <input type="radio" name="star-ratings" id={item.star} checked={state.ratings==item.star}
-            onChange={(e) => dispatch({ type: "RATINGS",payload:e.target.id})}/>
+            <input type="radio" name="star-ratings" id={item.star} checked={filterState.ratings==item.star}
+            onChange={(e) => dispatchFilters({ type: "RATINGS",payload:e.target.id})}/>
             <label className="mg-xsm fw-bold" htmlFor={item.title}>{item.label}</label>
             </div>
           )}
@@ -104,14 +104,14 @@ export const FiltersBar = ()=>{
         </div>
         <div className="sort-by-filter">
           <div className="items align-center">
-            <input type="radio" name="sort-radio" id="low-high" checked={state.sortBy === "PRICE-LOW-TO-HIGH"} onChange={() =>
-              dispatch({ type: "SORT", payload: "PRICE-LOW-TO-HIGH" })
+            <input type="radio" name="sort-radio" id="low-high" checked={filterState.sortBy === "PRICE-LOW-TO-HIGH"} onChange={() =>
+              dispatchFilters({ type: "SORT", payload: "PRICE-LOW-TO-HIGH" })
             }/>
             <label className="mg-xsm fw-bold" htmlFor="low-high">Low to High</label>
           </div>
           <div className="items align-center">
-            <input type="radio" name="sort-radio" id="high-low"  checked={state.sortBy === "PRICE-HIGH-TO-LOW"} onChange={() => 
-              dispatch({ type: "SORT", payload: "PRICE-HIGH-TO-LOW" })}/>
+            <input type="radio" name="sort-radio" id="high-low"  checked={filterState.sortBy === "PRICE-HIGH-TO-LOW"} onChange={() => 
+              dispatchFilters({ type: "SORT", payload: "PRICE-HIGH-TO-LOW" })}/>
             <label className="mg-xsm fw-bold" htmlFor="high-low">High to Low</label>
           </div>
         </div>
@@ -121,8 +121,8 @@ export const FiltersBar = ()=>{
         </div>
         <div className="out-of-stock-filter">
           <div className="items align-center">
-            <input type="checkbox" name="toggle-outstock" id="out-of-stock-toggle"  checked={state.removeOutOfStock} onChange={() => 
-              dispatch({ type: "REMOVE-OUT-OF-STOCK" })} />
+            <input type="checkbox" name="toggle-outstock" id="out-of-stock-toggle"  checked={filterState.removeOutOfStock} onChange={() => 
+              dispatchFilters({ type: "REMOVE-OUT-OF-STOCK" })} />
             <label className="mg-xsm fw-bold" htmlFor="out-of-stock-toggle">Hide Out of Stock Products</label>
           </div>
           </div>

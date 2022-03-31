@@ -13,12 +13,12 @@ import { GetProducts } from "../services/getProducts"
 
 export const ProductListing = ()=>{
     
-    const {state} = useProduct();
+    const {filterState} = useProduct();
 
     // GetProducts() is fetching Products from Backend
     const {loader,products} = GetProducts();
 
-    const displayProducts = filterProducts(state,products);
+    const displayProducts = filterProducts(filterState,products);
     return(
         <>
         <Navbar/>
