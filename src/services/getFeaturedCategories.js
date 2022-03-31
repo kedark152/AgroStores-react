@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-export const getFeaturedCategories = ()=>{
+export const GetFeaturedCategories = ()=>{
     const [categories,setCategories] = useState([]);
     useEffect(()=>{
         (async function categoriesLoader(){

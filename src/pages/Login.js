@@ -1,5 +1,4 @@
-import { Navbar } from "../components/Navbar";
-import { Footer } from "../components/Footer";
+import { Navbar,Footer } from "../components/allComponents"
 import { Link } from "react-router-dom";
 import "../styles/pages/login.css"
 
