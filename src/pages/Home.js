@@ -2,7 +2,8 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import "../styles/pages/home.css"
 import { FeaturedCategories } from "../components/FeaturedCategories";
-import { getFeaturedCategories } from "../utils/getFeaturedCategories";
+import { GetFeaturedCategories } from "../utils/getFeaturedCategories";
+import {Link} from "react-router-dom";
 
 export const Home = ()=>{
     return(
@@ -18,18 +19,18 @@ export const Home = ()=>{
                     <h2 className="banner-subtitle lt-sp-1 text-center">
                     Buy Fertilizers, Insectisides, Seeds & other Agriculture Products
                     </h2>
-                    <a
-                    href="./pages/products.html"
+                    <Link
+                    to="/products"
                     className="btn btn-solid btn-shop-now mg-lg btn-grad"
                     >
                     Shop Now
-                    </a>
+                    </Link>
                 </div>
                 </header>
                 <h2 className="text-center mg-top-md">Featured Categories</h2>
                 <div className="title-underline"></div>
                 <div className="categories">
-                  {getFeaturedCategories().map((item) =>
+                  {GetFeaturedCategories().map((item) =>
                   <FeaturedCategories key={item._id}  imgSrc={item.imgSrc} categoryTitle={item.categoryName}/> 
                 )}
                 </div>
