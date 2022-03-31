@@ -1,14 +1,9 @@
-import { Navbar } from "../components/Navbar"
-import { Footer } from "../components/Footer"
+
+import { Navbar,Footer,FiltersBar,ProductCard } from "../components/allComponents"
 import "../styles/pages/productlist.css"
-import { FiltersBar } from "../components/FiltersBar"
-import { ProductCard } from "../components/ProductCard"
-// import {useState,useEffect} from "react";
-// import axios from "axios"
 import { useProduct } from "../context/product-context"
 import {filterProducts} from "../utils/filterProducts"
 import { GetProducts } from "../services/getProducts"
-
 
 
 export const ProductListing = ()=>{

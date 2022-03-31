@@ -5,10 +5,10 @@ const ProductContext = createContext(null);
 
 // eslint-disable-next-line react/prop-types
 export const ProductProvider = ({children}) =>{
-    const [state, dispatch] = useReducer(filterReducer, filterInitialState);
+    const [filterState, dispatchFilters] = useReducer(filterReducer, filterInitialState);
     
    return(
-       <ProductContext.Provider value={{state,dispatch}}>
+       <ProductContext.Provider value={{filterState,dispatchFilters}}>
            {children}
        </ProductContext.Provider>
    )

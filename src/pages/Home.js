@@ -1,7 +1,5 @@
-import { Navbar } from "../components/Navbar";
-import { Footer } from "../components/Footer";
+import { Navbar,Footer,FeaturedCategories } from "../components/allComponents";
 import "../styles/pages/home.css"
-import { FeaturedCategories } from "../components/FeaturedCategories";
 import { GetFeaturedCategories } from "../services/getFeaturedCategories";
 import {Link} from "react-router-dom";
 
