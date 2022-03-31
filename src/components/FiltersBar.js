@@ -1,5 +1,5 @@
 import { useProduct } from "../context/product-context";
-import { GetFeaturedCategories } from "../utils/getFeaturedCategories";
+import { GetFeaturedCategories } from "../services/getFeaturedCategories";
 
 
 export const FiltersBar = ()=>{

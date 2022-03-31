@@ -2,7 +2,7 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import "../styles/pages/home.css"
 import { FeaturedCategories } from "../components/FeaturedCategories";
-import { GetFeaturedCategories } from "../utils/getFeaturedCategories";
+import { GetFeaturedCategories } from "../services/getFeaturedCategories";
 import {Link} from "react-router-dom";
 
 export const Home = ()=>{

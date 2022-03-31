@@ -3,35 +3,22 @@ import { Footer } from "../components/Footer"
 import "../styles/pages/productlist.css"
 import { FiltersBar } from "../components/FiltersBar"
 import { ProductCard } from "../components/ProductCard"
-import {useState,useEffect} from "react";
-import axios from "axios"
+// import {useState,useEffect} from "react";
+// import axios from "axios"
 import { useProduct } from "../context/product-context"
 import {filterProducts} from "../utils/filterProducts"
+import { GetProducts } from "../services/getProducts"
 
 
 
 export const ProductListing = ()=>{
-    const [loader, setLoader] = useState(true);
-    const [products, setProducts] = useState([{}]);
+    
     const {state} = useProduct();
 
-    useEffect(() => {
-      (async function prodLoader() {
-        try {
-          const response = await axios.get("/api/products");
-          const getProducts = response.data.products;
-          setLoader(false);
-          setProducts(getProducts);
-        } catch (error) {
-          console.error(error);
-        }
-      })(); //IIFE - Immediately Invoked Function
-    }, []);
-
+    // GetProducts() is fetching Products from Backend
+    const {loader,products} = GetProducts();
 
     const displayProducts = filterProducts(state,products);
-    console.log("dp",displayProducts);
-    console.log("Display State",state);
     return(
         <>
         <Navbar/>
