@@ -4,6 +4,7 @@ import { GetFeaturedCategories } from "../services/getFeaturedCategories";
 import {Link} from "react-router-dom";
 
 export const Home = ()=>{
+
     return(
     <>
         <Navbar/>
@@ -29,7 +30,7 @@ export const Home = ()=>{
                 <div className="title-underline"></div>
                 <div className="categories">
                   {GetFeaturedCategories().map((item) =>
-                  <FeaturedCategories key={item._id}  imgSrc={item.imgSrc} categoryTitle={item.categoryName}/> 
+                <FeaturedCategories key={item._id} imgSrc={item.imgSrc} categoryTitle={item.categoryName}/> 
                 )}
                 </div>
             </div>
