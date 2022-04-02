@@ -14,9 +14,7 @@ function totalOldPrice(){
   }
 
   const deliveryCharge = () =>(totalPrice()>499?0:100);
-     
   
-
     return(<>
       <div className="price-summary">
             <h3 className="fw-bold mg-xsm">Price Details</h3>
