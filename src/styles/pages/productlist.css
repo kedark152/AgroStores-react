@@ -51,11 +51,11 @@ input[type="checkbox"], input[type="radio"]{
     justify-content: space-evenly;
 }
 
-.heart-icon{
+.heart-icon-product-list{
     position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    font-size: 1.6rem;
+    top: 0.2rem;
+    right: 0.2rem;
+    font-size: 2rem;
     cursor: pointer;
     background-color: var(--lightest-green);
     padding: 5px;
