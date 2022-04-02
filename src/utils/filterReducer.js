@@ -11,6 +11,8 @@ export const filterReducer = (state, {type,payload}) => {
       return { ...state, ratings: payload };
     case 'CATEGORIES':
         return { ...state, categoryNames: getTickedNames(state,payload) }
+    case 'HOME-CATEGORIES-LINK':
+        return { ...state, categoryNames: [payload] }
     case 'CLEAR-FILTERS':
       return filterInitialState;
   
