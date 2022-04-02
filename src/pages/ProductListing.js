@@ -1,10 +1,8 @@
-
 import { Navbar,Footer,FiltersBar,ProductCard } from "../components/allComponents"
 import "../styles/pages/productlist.css"
 import { useProduct } from "../context/product-context"
 import {filterProducts} from "../utils/filterProducts"
 import { GetProducts } from "../services/getProducts"
-
 
 export const ProductListing = ()=>{
     
