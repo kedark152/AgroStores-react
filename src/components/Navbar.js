@@ -1,7 +1,12 @@
 import "../styles/layouts/navbar.css";
 import {Link} from "react-router-dom";
+import {useCart} from "../context/cart-context"
+import { useWishList } from "../context/wishlist-context";
 
 export const Navbar = () => {
+
+  const {cartState} = useCart();
+  const {wishListState} = useWishList();
     return( 
         <nav className="align-center">
           <div className="nav-brand fs-lg"><Link to="/">Agro<span className="dark-brown-color">Stores</span></Link></div>
@@ -20,18 +25,18 @@ export const Navbar = () => {
               <Link to="/login" className="btn btn-solid btn-login">Login</Link>
             </li>
             <li>
-              <a href="./pages/wishlist.html">
+              <Link to="/wishlist" >
                 <i className="material-icons mg-left-sm">favorite</i>
-                <span className="badge-count">0</span>
-              </a>
+                <span className="badge-count">{wishListState. wishlistItems.length}</span>
+              </Link>
             </li>
             <li>
-              <a href="./pages/cart.html">
+              <Link to="/cart">
                 <i className="material-icons mg-left-sm" id="shop-cart">
                   shopping_cart
                 </i>
-                <span className="badge-count">0</span>
-              </a>
+                <span className="badge-count">{cartState.cartItems.length}</span>
+              </Link>
             </li>
           </ul>
         </nav>);
