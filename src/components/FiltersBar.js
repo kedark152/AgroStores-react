@@ -1,7 +1,6 @@
 import { useProduct } from "../context/product-context";
 import { GetFeaturedCategories } from "../services/getFeaturedCategories";
 
-
 export const FiltersBar = ()=>{
   const {filterState,dispatchFilters} = useProduct();
   const ratingsInput = [
@@ -35,7 +34,7 @@ export const FiltersBar = ()=>{
   
 
     return(<>
-     <aside className="filters-sidebar flex-column pd-sm" id="filter-bar">
+     <aside className="filters-sidebar flex-column pd-sm"  id="filter-bar">
         <div className="filter-title align-center mg-top-xsm">
           <p className="para-md fw-bold filter-title">Filters</p>
           <p className="para-sm filter-clear-btn" onClick={() => dispatchFilters({ type: "CLEAR-FILTERS"})}>CLEAR</p>
