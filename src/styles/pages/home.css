@@ -1,6 +1,8 @@
 .Home{
     font-family: var(--acme-font);
     background-color: var(--primary-transparent);
+    min-height: 100vh;
+    max-height: max-content;
 }
 
 /* Header */
