@@ -3,6 +3,7 @@ import "../styles/pages/productlist.css"
 import { useProduct } from "../context/product-context"
 import {filterProducts} from "../utils/filterProducts"
 import { GetProducts } from "../services/getProducts"
+import { useState } from "react"
 
 export const ProductListing = ()=>{
     
@@ -11,7 +12,13 @@ export const ProductListing = ()=>{
     // GetProducts() is fetching Products from Backend
     const {loader,products} = GetProducts();
 
+    //Sidebar Toggler for Mobile Devices
+    const [toggler,setToggler] = useState(true);
+    const toggleSetter = () => (toggler===true)?(setToggler(false)):(setToggler(true));
+
+    //Array list to display products
     const displayProducts = filterProducts(filterState,products);
+    
     return(
         <>
         <Navbar/>
@@ -19,10 +26,11 @@ export const ProductListing = ()=>{
      <div className="product-container-main">
 
         {/* Filters Side-Bar  */}
-        <FiltersBar/>
+        {toggler && <FiltersBar/>}
+        {console.log(toggler)}
         {/* Product Cards  */}
         <div className="fs-md">{loader && "Loading Products..."}</div>
-        <div className="fs-md">{displayProducts.length==0 && "No Products Found"}</div>
+        <div className="fs-md">{!loader && displayProducts.length==0 && "No Products Found"}</div>
       <div className="products-list">
         {/* Card */}
        {displayProducts.map((item)=><ProductCard key={item._id} cardDetails={item}/>)}
@@ -30,8 +38,8 @@ export const ProductListing = ()=>{
       </div>
      </div>
    {/* Filter on Mobile Button  */}
-    <a href="#filter-bar" className="btn-float-action btn-filter-float">
-      <i className="material-icons" id="filter-icon">filter_alt</i>
+    <a href="#filter-bar" className="btn-float-action btn-filter-float" onClick={()=> toggleSetter()}>
+      <i className="material-icons" id="filter-icon">{toggler ? `filter_alt`:`filter_alt_off`}</i>
     </a>
         <Footer/>            
         

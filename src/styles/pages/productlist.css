@@ -12,6 +12,7 @@
   border-radius: 5px;
   width: 20rem;
   height: fit-content;
+ 
 }
 .filters-sidebar a{
     color: var(--black);
@@ -62,6 +63,7 @@ input[type="checkbox"], input[type="radio"]{
     border-radius: 50%;
     color:var(--danger); 
     font-weight: bold;
+    
 }
 
 .btn-filter-float{
@@ -69,15 +71,15 @@ input[type="checkbox"], input[type="radio"]{
 }
 
 /* Responsiveness */
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px){ 
+
     .filters-sidebar{
-        display: none;
-        position: absolute;
+        position: fixed;
         width: 15rem;
-        height: 100%;
-        top:0;
+        height: fit-content;
+        top: 0;
         left: 0;
-        z-index: 2;  
+        z-index: 3;  
         box-shadow: var(--box-shadow-right);
     }
     
