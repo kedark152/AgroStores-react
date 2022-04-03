@@ -1,4 +1,4 @@
-import { Navbar } from "../components/Navbar";
+import { Navbar, Footer } from "../components/allComponents";
 import { Link } from "react-router-dom";
 import "../styles/pages/forgotpassword.css"
 
@@ -28,6 +28,7 @@ export const ForgotPassword = ()=>{
                     </Link>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }
