@@ -21,7 +21,7 @@ function totalOldPrice(){
             <hr />
             <div className="original-price price-item align-center mg-xsm fw-bold">
               <h4>Price ({cartState.cartItems.length} Items)</h4>
-              <p className="para-md">₹{totalPrice()}</p>
+              <p className="para-md">₹{totalOldPrice()}</p>
             </div>
             <div className="discount-price price-item align-center mg-xsm fw-bold">
               <h4>Discount</h4>
