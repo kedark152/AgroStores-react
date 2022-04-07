@@ -1,0 +1,21 @@
+/* Scroll-bar styling */
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-transparent) var(--primary);
+}
+  
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--primary-transparent);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primary-hover);
+    border-radius: 10px;
+    border: 1px solid var(--primary-hover);
+}
