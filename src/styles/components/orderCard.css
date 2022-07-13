@@ -1,0 +1,33 @@
+.order-box {
+  padding: 2rem;
+  background-color: var(--white);
+  gap: 10px;
+  box-shadow: var(--box-shadow-simple);
+}
+.btn-continue-shopping {
+  width: 14rem;
+  margin-left: 10rem;
+  padding: 1rem;
+}
+.success-tick-img {
+  width: 8rem;
+  margin-left: 14rem;
+}
+
+@media screen and (max-width: 800px) {
+  .order-box {
+    padding: 1rem;
+  }
+  .success-tick-img {
+    width: 5rem;
+    margin-left: 8rem;
+  }
+  .payment-text,
+  .email-msg-text {
+    font-size: 1rem;
+  }
+  .btn-continue-shopping {
+    width: 12rem;
+    margin-left: 5rem;
+  }
+}
