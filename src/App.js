@@ -1,13 +1,15 @@
 import "./App.css";
-import "./styles/utilities/variables.css"
-import {PageRoutes} from "./routes/PageRoutes"
+import "./styles/utilities/variables.css";
+import { PageRoutes } from "./routes/PageRoutes";
+import "react-toastify/dist/ReactToastify.css";
 
+import { ToastContainer } from "react-toastify";
 
 function App() {
-  console.log("Running App.Js Successfully");
   return (
     <div className="App">
-        <PageRoutes/>
+      <ToastContainer autoClose={1500} />
+      <PageRoutes />
     </div>
   );
 }
