@@ -26,7 +26,6 @@ export const Cart = () => {
           {/* <!-- Product-list --> */}
           <div className="final-product-list flex-column">
             {/* <!-- Horizontal Cards  --> */}
-
             {cartState.cartItems.length > 0 &&
               cartState.cartItems.map((item) => (
                 <HorizontalCard key={item._id} cardDetailsInCart={item} />
