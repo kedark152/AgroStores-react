@@ -1,0 +1,62 @@
+.Profile {
+  font-family: var(--acme-font);
+  background-color: var(--primary-transparent);
+
+  /* background-color: lightslategray; */
+  min-height: 100vh;
+  max-height: max-content;
+}
+
+.profile-card-container {
+  grid-area: myProfile;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  width: 28rem;
+  border-radius: var(--radius-md);
+  background-color: rgb(146, 212, 208);
+  box-shadow: var(--box-shadow-2);
+  height: fit-content;
+  padding: var(--size-sm) var(--size-md);
+  margin: 3rem 0;
+}
+
+.avatar {
+  margin: 1rem 9rem;
+}
+
+.btn-show-address,
+.btn-add-address {
+  width: 12rem;
+}
+.btn-delete-address,
+.btn-edit-address,
+.show-hide-address-icon {
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.btn-delete-address:hover,
+.btn-edit-address:hover,
+.show-hide-address-icon:hover {
+  cursor: pointer;
+  background-color: var(--success);
+}
+@media screen and (max-width: 800px) {
+  .profile-page-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .avatar {
+    margin: 1rem 20vw;
+  }
+  .profile-card {
+    width: 80vw;
+    margin-bottom: 5rem;
+  }
+}

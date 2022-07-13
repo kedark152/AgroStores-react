@@ -1,6 +1,4 @@
-@import url(https://forest-ui.netlify.app/stylesheets/main.css);
 @import url(./styles/layouts/scrollbar.css);
-.App{
-    
-    height: 100vh;
+.App {
+  height: 100vh;
 }
