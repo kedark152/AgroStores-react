@@ -1,0 +1,25 @@
+.address-box {
+  padding: 2rem;
+  background-color: var(--white);
+  gap: 10px;
+  box-shadow: var(--box-shadow-simple);
+}
+
+.single-address {
+  gap: 8px;
+}
+
+.address-select-input {
+  accent-color: var(--primary);
+}
+.btn-edit-address {
+  margin-left: var(--size-md);
+}
+@media screen and (max-width: 800px) {
+  .address-box {
+    padding: 1rem;
+  }
+  .btn-edit-address {
+    margin-left: var(--size-xsm);
+  }
+}
