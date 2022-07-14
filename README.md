@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://res.cloudinary.com/dvuh4fz9d/image/upload/v1657795778/shop_cuojbm.ico" height="120" width="220" alt="logo"/>
+  <img src="https://res.cloudinary.com/dvuh4fz9d/image/upload/v1657795778/shop_cuojbm.ico" height="150" width="220" alt="logo"/>
 
 # 🌱 AgroStores 🛒
 
