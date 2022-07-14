@@ -27,9 +27,10 @@ Checkout the live deployment here: [AgroStores](https://agro-stores.netlify.app/
 - [Products Listing Page](https://agro-stores.netlify.app/products) (public page), with various categories which Filters Products based on Price Range of 200 to 2000 Rupees, Filter By Product Categories,Filter Products by Ratings, Sort Products by Price: Low to High & High to Low. User can also easily add products to both Wishlist and Cart by clicking buttons on each product card.
 - [Single Product Page](https://agro-stores.netlify.app/product/I5c1bFwd), (public page) - User can add product to cart, add to wishlist, view detailed product description along with Product Details.
 - Cart Page, (private page), consists of all products added in cart. User can increase/decrease the product quantity and see the cart price summary details and go to checkout page. Cart Page will only open if the user is logged In.
+- Checkout Page - User has to select the saved address or add/update address & check the price summary. User can then click on proceed to payment.
 - Wishlist Page (private page), consists of all products marked as favourite, user can also add products to cart and remove from wishlist.
 - [404 Page](https://agro-stores.netlify.app/dejdj) - Added 404 Page Not Found.
-- Profile Page (private page) - Profile Page shows name, email of logged in user and Quick Links for private pages, and saved addresses. User can also add new address,
+- Profile Page (private page) - Profile Page shows name, email of logged in user and Quick Links for private pages, and saved addresses. User can also add new address, update & delete address.
 - Added Responsiveness for nearly all devices from 350px onwards.
 - Loaders & Alerts: Loaders are added when videos are fetching, React Toastify is used for alerts message
 - Note:- 'Public Page'- Opens without Authentication, 'Private Page' - Opens only if user is Authenticated otherwise opens Login Page.
@@ -48,6 +49,7 @@ Checkout the live deployment here: [AgroStores](https://agro-stores.netlify.app/
 - Cloudinary for Hosting of Images
 - [Flaticons](https://www.flaticon.com/) for colorful icons.
 - React Toastify for alerts.
+- Razorpay Test Payments Integration.
 
 ---
 
