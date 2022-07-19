@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://res.cloudinary.com/dvuh4fz9d/image/upload/v1657795778/shop_cuojbm.ico" height="150" width="220" alt="logo"/>
+  <img src="https://res.cloudinary.com/dvuh4fz9d/image/upload/v1657795778/shop_cuojbm.ico" height="180" width="220" alt="logo"/>
 
 # 🌱 AgroStores 🛒
 
@@ -32,7 +32,7 @@ Checkout the live deployment here: [AgroStores](https://agro-stores.netlify.app/
 - [404 Page](https://agro-stores.netlify.app/dejdj) - Added 404 Page Not Found.
 - Profile Page (private page) - Profile Page shows name, email of logged in user and Quick Links for private pages, and saved addresses. User can also add new address, update & delete address.
 - Added Responsiveness for nearly all devices from 350px onwards.
-- Loaders & Alerts: Loaders are added when videos are fetching, React Toastify is used for alerts message
+- Loaders & Alerts: Loaders are added when products are fetching, React Toastify is used for alerts message
 - Note:- 'Public Page'- Opens without Authentication, 'Private Page' - Opens only if user is Authenticated otherwise opens Login Page.
 
 ---
