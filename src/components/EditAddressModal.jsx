@@ -73,13 +73,14 @@ export const EditAddressModal = () => {
           </label>
           <input type="text" name="fullName" className="fs-sm" required />
           <label htmlFor="contact" className="mg-y-xsm fs-sm">
-            Contact
+            Contact Number (10 Digits Only)
           </label>
           <input
-            type="number"
+            type="text"
             id="contact"
             name="contact"
             className="fs-sm"
+            pattern="^[0-9]{10}$"
             required
           />
           <label htmlFor="flatName" className="mg-y-xsm fs-sm">
@@ -113,13 +114,14 @@ export const EditAddressModal = () => {
           </label>
           <input type="text" id="city" name="city" className="fs-sm" required />
           <label htmlFor="pincode" className="mg-y-xsm fs-sm">
-            Pincode
+            Pincode (6 Digits Only)
           </label>
           <input
-            type="number"
+            type="text"
             id="pincode"
             name="pincode"
             className="fs-sm"
+            pattern="([0-9]{6}|[0-9]{3}\s[0-9]{3})"
             required
           />
           <label htmlFor="state" className="mg-y-xsm fs-sm">
