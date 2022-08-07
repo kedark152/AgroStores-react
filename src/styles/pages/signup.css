@@ -1,60 +1,68 @@
-.signup-container{
-    width: 100%;
-    font-family: var(--lato-font);
-    background-color: var(--primary-transparent);
-    margin: 0;
-    min-height: 100vh;
-    max-height: max-content;
+.signup-container {
+  width: 100%;
+  font-family: var(--lato-font);
+  background-color: var(--primary-transparent);
+  margin: 0;
+  min-height: 100vh;
+  max-height: max-content;
 }
-.signup-card{
-   display: flex;
-   flex-direction: column;
-   width: 28rem;
-   border-radius: 10px;
-   background-color: var(--white);
-   box-shadow: var(--box-shadow-1);
-   height: fit-content;
-   padding: 1rem 1.5rem ;
-   margin: 2rem;
+.signup-card {
+  display: flex;
+  flex-direction: column;
+  width: 28rem;
+  border-radius: 10px;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow-1);
+  height: fit-content;
+  padding: 1rem 1.5rem;
+  margin: 2rem;
+  position: relative;
 }
-input[type="checkbox"]{
-    width: 1rem;
-    height: 1rem;
-    accent-color: var(--primary);
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--primary);
 }
-.signup-card input{
- height: 1.5rem;
- font-size: 1.1rem;
+.signup-card input {
+  height: 1.5rem;
+  font-size: 1.1rem;
 }
 
-.signup-pwd-show-icon{
+.signup-pwd-show-icon {
   cursor: pointer;
 }
 
-.signup-card input:focus{
-    border: 2px solid var(--primary);
+.signup-card input:focus {
+  border: 2px solid var(--primary);
 }
 
-.signup-card .btn{
-    padding: 1rem;
-    border: none;
-    justify-content: center;
-    width: 100%;
-   margin: 0.5rem;
+.signup-card .btn-signin,
+.signup-card .btn-create-account {
+  padding: 1rem;
+  border: none;
+  justify-content: center;
+  width: 100%;
+  margin: 0.5rem;
 }
 
-.password-item, .confirm-password-item{
-    position: relative;
+.password-item,
+.confirm-password-item {
+  position: relative;
 }
-.signup-pwd-show-icon{
-    position: absolute;
-    top: 1.75rem;
-    right: 5px; 
+.signup-pwd-show-icon {
+  position: absolute;
+  top: 1.75rem;
+  right: 5px;
 }
 
+.btn-fill-dummy-data {
+  margin: 0;
+  margin-left: auto;
+  width: 9.5rem;
+}
 
-@media only screen and (max-width: 800px){
-    .signup-card{
-        width: fit-content;
-    }
+@media only screen and (max-width: 800px) {
+  .signup-card {
+    width: fit-content;
+  }
 }

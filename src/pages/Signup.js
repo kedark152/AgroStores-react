@@ -37,6 +37,10 @@ export const Signup = () => {
       const response = await axios.post(`/api/auth/signup`, signUpData);
       // saving the encodedToken in the localStorage
       localStorage.setItem("token", response.data.encodedToken);
+      localStorage.setItem(
+        "userData",
+        JSON.stringify(response.data.createdUser)
+      );
       setAuth({
         ...auth,
         token: response.data.encodedToken,
@@ -49,6 +53,17 @@ export const Signup = () => {
       toast.error("Server Error, Unable to Signup", error);
     }
   };
+
+  const fillDummyData = (e) => {
+    e.preventDefault();
+    const form = editSignupForm.current;
+    form["firstName"].value = "Ram";
+    form["lastName"].value = "Mishra";
+    form["emailId"].value = "ram.mishra@gmail.com";
+    form["passwordField"].value = "ramMishra@123";
+    form["confirmPasswordField"].value = "ramMishra@123";
+  };
+
   return (
     <>
       <Navbar />
@@ -61,6 +76,12 @@ export const Signup = () => {
         <div className="signup-card">
           {/* Heading */}
           <h2 className="text-center mg-xsm">Signup</h2>
+          <button
+            className="btn btn-solid btn-fill-dummy-data"
+            onClick={(e) => fillDummyData(e)}
+          >
+            Fill Dummy Data
+          </button>
           {/* First-Name */}
           <div className="full-name-item flex-column mg-xsm fw-bold">
             <label htmlFor="full-name" className="mg-bottom-xsm">
@@ -172,10 +193,15 @@ export const Signup = () => {
             <label htmlFor="terms">I accept all Terms & Conditions*</label>
           </div>
           {/* Buttons */}
-          <button type="submit" href="" className="btn btn-solid fw-bold">
+
+          <button
+            type="submit"
+            href=""
+            className="btn btn-solid btn-create-account fw-bold"
+          >
             Create New Account
           </button>
-          <Link to="/login" className="btn btn-outline-icon fw-bold">
+          <Link to="/login" className="btn btn-outline-icon btn-signin fw-bold">
             Already have an account?
             <i className="material-icons">chevron_right</i>
           </Link>
