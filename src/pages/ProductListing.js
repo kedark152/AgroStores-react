@@ -54,7 +54,7 @@ export const ProductListing = () => {
         onClick={() => toggleSetter()}
       >
         <i className="material-icons" id="filter-icon">
-          {toggler ? `filter_alt` : `filter_alt_off`}
+          {toggler ? `filter_alt_off` : `filter_alt`}
         </i>
       </a>
       <Footer />
