@@ -58,7 +58,18 @@ export const EditAddressModal = () => {
     }
     editAddressModal.current.reset();
   };
-
+  const fillDummyAddressForm = (e) => {
+    e.preventDefault();
+    const form = editAddressModal.current;
+    form["fullName"].value = "Ramesh Sharma";
+    form["flatName"].value = "A/201, Govardhan Complex";
+    form["area"].value = "Azad Nagar, Andheri-West";
+    form["landmark"].value = "Near Azad Nagar Metro Station";
+    form["city"].value = "Mumbai";
+    form["pincode"].value = "400063";
+    form["stateSelect"].value = "Maharashtra";
+    form["contact"].value = "8899887788";
+  };
   return (
     <div className={`edit-address-background ${addressState.setEditBox}`}>
       <form
@@ -67,6 +78,12 @@ export const EditAddressModal = () => {
         onSubmit={(e) => handleModalOnSubmit(e)}
       >
         <h2 className="text-center">Address</h2>
+        <button
+          className="btn btn-solid btn-fill-dummy-address"
+          onClick={(e) => fillDummyAddressForm(e)}
+        >
+          Fill Dummy Data
+        </button>
         <div className="top-section flex-column ">
           <label htmlFor="name" className="mg-y-xsm fs-sm">
             Full Name
