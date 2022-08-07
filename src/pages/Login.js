@@ -5,9 +5,13 @@ import { useAuth } from "../context/auth-context";
 import { useState, useRef } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useCart } from "../context/cart-context";
+import { useWishList } from "../context/wishlist-context";
 
 export const Login = () => {
   const { auth, setAuth } = useAuth();
+  const { dispatchCart } = useCart();
+  const { dispatchWishList } = useWishList();
   const [passwordType, setPasswordType] = useState("password");
   const [testData, setTestData] = useState({ email: "", password: "" });
   const editLoginForm = useRef(null);
@@ -35,6 +39,12 @@ export const Login = () => {
         token: response.data.encodedToken,
         isLoggedIn: true,
       });
+      
+      const prevCartData = response.data.foundUser.cart;
+      const prevWishlistData = response.data.foundUser.wishlist;
+
+      dispatchCart({ type: "UPDATE-CART", payload: prevCartData });
+      dispatchWishList({ type: "UPDATE-WISHLIST", payload: prevWishlistData });
 
       setTestData({ email: "", password: "" });
       toast.success("Login Success");
