@@ -13,12 +13,13 @@ import { Loader } from "../components/Loader";
 
 export const ProductListing = () => {
   const { filterState } = useProduct();
+  let windowWidth = window.innerWidth;
 
   // GetProducts() is fetching Products from Backend
   const { loader, products } = GetProducts();
 
   //Sidebar Toggler for Mobile Devices
-  const [toggler, setToggler] = useState(false);
+  const [toggler, setToggler] = useState(windowWidth > 800);
   const toggleSetter = () =>
     toggler === true ? setToggler(false) : setToggler(true);
 
