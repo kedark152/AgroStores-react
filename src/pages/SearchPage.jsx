@@ -4,7 +4,6 @@ import "../styles/pages/cart.css";
 import { useState } from "react";
 import { ProductCard } from "../components/allComponents";
 import { GetProducts } from "../services/getProducts";
-import { Loader } from "../components/Loader";
 import "../styles/pages/searchPage.css";
 
 export const SearchPage = () => {
@@ -33,7 +32,7 @@ export const SearchPage = () => {
             searchQuery.length > 1 &&
             "No Products Found"}
         </h4>
-        {loader && <Loader />}
+
         {!loader && (
           <div className="search-container-main flex mg-bottom-md mg-top-md">
             {displayProducts.map((item) => (
