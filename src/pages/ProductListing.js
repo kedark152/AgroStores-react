@@ -18,7 +18,7 @@ export const ProductListing = () => {
   const { loader, products } = GetProducts();
 
   //Sidebar Toggler for Mobile Devices
-  const [toggler, setToggler] = useState(true);
+  const [toggler, setToggler] = useState(false);
   const toggleSetter = () =>
     toggler === true ? setToggler(false) : setToggler(true);
 
