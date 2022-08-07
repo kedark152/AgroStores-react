@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { useAddress } from "../context/address-context";
 import { useState } from "react";
 import { MobileMenu } from "./MobileMenu";
+import { DebounceInput } from "react-debounce-input";
 
 export const Navbar = ({ setSearchQuery }) => {
   const { cartState, dispatchCart } = useCart();
@@ -51,7 +52,9 @@ export const Navbar = ({ setSearchQuery }) => {
         <i className="material-icons" id="search-icon">
           search
         </i>
-        <input
+        <DebounceInput
+          minLength={2}
+          debounceTimeout={500}
           type="text"
           name="search-bar"
           id="search-bar"
