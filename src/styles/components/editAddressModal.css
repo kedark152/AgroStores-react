@@ -34,3 +34,15 @@
 .hide-edit-box {
   display: none;
 }
+
+.btn-fill-dummy-address {
+  margin: 0;
+  margin-left: auto;
+  width: 9.5rem;
+}
+
+@media only screen and (max-width: 400px) {
+  .edit-address-container {
+    width: 320px;
+  }
+}
