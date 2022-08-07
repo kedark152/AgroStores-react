@@ -74,7 +74,7 @@ input[type="radio"] {
 }
 
 /* Responsiveness */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .filters-sidebar {
     position: fixed;
     width: 15rem;
