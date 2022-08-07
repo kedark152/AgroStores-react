@@ -2,6 +2,8 @@ import { useCart } from "../context/cart-context";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAddress } from "../context/address-context";
+import { clearCart } from "../services/cartServices";
+import { useAuth } from "../context/auth-context";
 
 export const CartPriceCard = () => {
   const { cartState } = useCart();
@@ -9,6 +11,7 @@ export const CartPriceCard = () => {
   const navigate = useNavigate();
   const { addressState } = useAddress();
   const { dispatchCart } = useCart();
+  const { auth } = useAuth();
 
   function totalPrice() {
     let collectPrice = 0;
@@ -57,7 +60,7 @@ export const CartPriceCard = () => {
         description: "Test Transaction",
         image: "",
         handler: async (response) => {
-          dispatchCart({ type: "CLEAR-CART" });
+          clearCart({ auth, dispatchCart });
           toast.success("The payment was successfull");
           navigate(`/order-success/${response.razorpay_payment_id}`);
         },

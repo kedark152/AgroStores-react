@@ -30,7 +30,7 @@ export const removeItemFromCart = async ({ auth, itemId, dispatchCart }) => {
     const response = await axios.delete(`/api/user/cart/${itemId}`, {
       headers: { authorization: auth.token },
     });
-   
+
     dispatchCart({
       type: "REMOVE-FROM-CART",
       payload: response.data.cart,
@@ -39,5 +39,17 @@ export const removeItemFromCart = async ({ auth, itemId, dispatchCart }) => {
   } catch (error) {
     console.log("Remove Item from Cart Error", error);
     toast.error("Error to remove Item from Cart");
+  }
+};
+//clears cart after payment.
+export const clearCart = async ({ auth, dispatchCart }) => {
+  try {
+    await axios.delete(`/api/user/clearCart`, {
+      headers: { authorization: auth.token },
+    });
+    dispatchCart({ type: "CLEAR-CART" });
+  } catch (error) {
+    console.log("Clear Cart Error", error);
+    toast.error("Error to Clear Cart");
   }
 };
