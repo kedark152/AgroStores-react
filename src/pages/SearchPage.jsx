@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ProductCard } from "../components/allComponents";
 import { GetProducts } from "../services/getProducts";
 import "../styles/pages/searchPage.css";
+import { DebounceInput } from "react-debounce-input";
 
 export const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,6 +22,22 @@ export const SearchPage = () => {
       {/* <!-- main-body --> */}
       <div className="search-page-body">
         <h2 className="text-center pd-md serach-heading">Search Page</h2>
+        {/* <Mobile SearchBar /> */}
+        <div className="search-mobile-field">
+          <i className="material-icons" id="search-mobile-icon">
+            search
+          </i>
+          <DebounceInput
+            minLength={2}
+            debounceTimeout={500}
+            type="text"
+            name="search-bar"
+            id="search-mobile-bar"
+            placeholder="Search"
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+
         <h3 className="text-center">
           {searchQuery.length > 1
             ? `Search Query: "${searchQuery}"`

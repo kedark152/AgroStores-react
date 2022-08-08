@@ -33,6 +33,9 @@ export const MobileMenu = ({
       <Link to="/products" className="link-mobile-menu fw-bold shop pd-sm">
         Show All Products
       </Link>
+      <Link to="/search" className="link-mobile-menu fw-bold shop pd-sm">
+        Search Products
+      </Link>
       <Link to="/cart" className="link-mobile-menu fw-bold pd-sm ">
         Cart ({cartItemsCount})
       </Link>

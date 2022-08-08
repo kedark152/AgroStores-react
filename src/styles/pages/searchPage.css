@@ -13,3 +13,41 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+#search-mobile-bar,
+.search-mobile-field {
+  border-radius: 5px;
+  border: 2px solid var(--primary);
+}
+
+.search-mobile-field {
+  position: relative;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  width: 70vw;
+  background-color: var(--white);
+  margin-bottom: 1rem;
+}
+#search-mobile-icon {
+  position: absolute;
+  top: 20%;
+  right: 2%;
+}
+
+#search-mobile-bar {
+  border: none;
+  height: 2.5rem;
+  width: 85%;
+  font-size: 1.2rem;
+  padding: 0rem 0.5rem;
+}
+@media only screen and (max-width: 2560px) {
+  .search-mobile-field {
+    display: none;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .search-mobile-field {
+    display: block;
+  }
+}
