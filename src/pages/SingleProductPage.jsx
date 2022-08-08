@@ -1,7 +1,7 @@
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import "../styles/pages/singleProductPage.css";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate, Link, useLocation } from "react-router-dom";
 import { Loader } from "../components/Loader";
 import { GetProductById } from "../services/getProductById";
 import { IsItemInCart } from "../utils/isItemInCart";
@@ -25,6 +25,7 @@ export const SingleProductPage = () => {
   const { dispatchCart } = useCart();
   const inWishList = IsItemInWishList(productId);
   const inCart = IsItemInCart(productId);
+  const { pathname } = useLocation();
   const {
     _id,
     title,
@@ -78,7 +79,11 @@ export const SingleProductPage = () => {
                             itemDetails: { ...product, quantity: 1 },
                             dispatchCart,
                           })
-                        : navigate("/login");
+                        : navigate(
+                            "/login",
+                            { state: { from: { pathname: pathname } } },
+                            { replace: true }
+                          );
                     }}
                   >
                     <i className="material-icons">shopping_cart</i>
@@ -109,7 +114,11 @@ export const SingleProductPage = () => {
                             itemDetails: product,
                             dispatchWishList,
                           })
-                        : navigate("/login");
+                        : navigate(
+                            "/login",
+                            { state: { from: { pathname: pathname } } },
+                            { replace: true }
+                          );
                     }}
                   >
                     <i className="material-icons red-color">favorite_border</i>

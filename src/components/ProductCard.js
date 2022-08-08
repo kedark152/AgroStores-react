@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IsItemInCart } from "../utils/isItemInCart";
 import { IsItemInWishList } from "../utils/isItemInWishList";
 import { useAuth } from "../context/auth-context";
@@ -30,6 +30,7 @@ export const ProductCard = ({ cardDetails }) => {
   const inWishList = IsItemInWishList(_id);
   const inCart = IsItemInCart(_id);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   return (
     <>
@@ -65,7 +66,11 @@ export const ProductCard = ({ cardDetails }) => {
                     itemDetails: cardDetails,
                     dispatchWishList,
                   })
-                : navigate("/login");
+                : navigate(
+                    "/login",
+                    { state: { from: { pathname: pathname } } },
+                    { replace: true }
+                  );
             }}
           >
             favorite_border
@@ -104,7 +109,11 @@ export const ProductCard = ({ cardDetails }) => {
                     itemDetails: { ...cardDetails, quantity: 1 },
                     dispatchCart,
                   })
-                : navigate("/login");
+                : navigate(
+                    "/login",
+                    { state: { from: { pathname: pathname } } },
+                    { replace: true }
+                  );
             }}
           >
             <i className="material-icons">shopping_cart</i>
