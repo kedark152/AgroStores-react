@@ -17,7 +17,7 @@ export const Login = () => {
   const editLoginForm = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/products";
+  const from = location.state?.from?.pathname || "/";
 
   const handleLoginForm = (e) => {
     e.preventDefault();
@@ -39,7 +39,7 @@ export const Login = () => {
         token: response.data.encodedToken,
         isLoggedIn: true,
       });
-      
+
       const prevCartData = response.data.foundUser.cart;
       const prevWishlistData = response.data.foundUser.wishlist;
 
@@ -48,6 +48,7 @@ export const Login = () => {
 
       setTestData({ email: "", password: "" });
       toast.success("Login Success");
+
       navigate(from, { replace: true });
     } catch (error) {
       console.log("Login Error", error);
