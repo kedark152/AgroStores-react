@@ -34,8 +34,15 @@ input[type="checkbox"],
 input[type="radio"] {
   width: 1rem;
   height: 1rem;
+  cursor: pointer;
 }
 
+.filters-sidebar input[type="range"] {
+  cursor: pointer;
+}
+.filters-sidebar label {
+  cursor: pointer;
+}
 .filter-title,
 .filter-price {
   justify-content: space-between;
@@ -52,7 +59,7 @@ input[type="radio"] {
   grid-template-columns: repeat(auto-fit, 15rem);
   grid-auto-rows: min(30rem, 35rem); /* (30rem,auto/35)*/
   grid-gap: 1rem;
-  justify-content: space-evenly;
+  justify-content: left;
 }
 
 .heart-icon-product-list {
@@ -87,6 +94,7 @@ input[type="radio"] {
 
   .products-list {
     width: 100%;
+    justify-content: center;
   }
 
   .container-main {
